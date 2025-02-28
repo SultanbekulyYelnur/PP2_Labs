@@ -43,4 +43,23 @@ class Point:
 
     def dist(a, b):
         return sqrt((a.x-b.x)**2+(a.y-b.y)**2)
+    
+
+class Account:
+    def __init__(self, owner, balance):
+        self.owner = owner
+        self.balance = balance
+    
+    def deposit(self, d_amount):
+        self.balance =+ d_amount
+
+    def withdrawal(self, w_amount):
+        if(w_amount <= self.balance):
+            self.balance =- w_amount
+        else:
+            print("Not correct withdrawal")
+    
+
+        
+
 

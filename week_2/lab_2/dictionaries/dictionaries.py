@@ -12,3 +12,8 @@ thisdict = {
   "year": 2020
 }
 print(thisdict)
+
+print(len(thisdict))
+
+thisdict = dict(name = "John", age = 36, country = "Norway")
+print(thisdict)

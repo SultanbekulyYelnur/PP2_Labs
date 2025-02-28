@@ -1,11 +1,19 @@
-from itertools import permutations
+def PermutationsOfString(text):
+    for i in range(len(text)):
+        if len(text) == 1:
+            return text
+        
+    result = []
+    for i in range(len(text)):
+        current = text[i]
+        remaining = text[:i] + text[i+1:]
 
-def print_permutations():
-    user_input = input("Enter a string: ")
-    perm_list = permutations(user_input)
-    
-    for perm in perm_list:
-        print(''.join(perm))
+        perms = PermutationsOfString(remaining)
 
-# Call the function
-print_permutations()
+        for j in range (len(perms)):
+            result.append(current + perms[j])
+        
+    return result
+
+text = "abc"
+print(PermutationsOfString(text))
